@@ -18,3 +18,6 @@ function switchTheme() {
 }
 
 document.getElementById("switch").addEventListener("click", switchTheme);
+
+window.onscroll = function(){scrollFunction()};
+
