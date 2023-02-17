@@ -18,8 +18,8 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('/crearEntrenador', (req, res) => {
-    res.render('crearEntrenador'); //nueva vista que llamaremos Crear
+router.get('/crearEquipos', (req, res) => {
+    res.render('crearEquipos'); //nueva vista que llamaremos Crear
  })
 
  

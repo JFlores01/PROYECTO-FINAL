@@ -1,4 +1,17 @@
 
+const nombreUsuario = JSON.parse(localStorage.getItem("user"));
+
+
+
+const nombreH1 = document.getElementById('bienvenido');
+
+
+nombreH1.textContent = `Bienvenido, ${nombreUsuario.nombre}!`;
+
+
+
+
+
 function switchTheme() {
     var button = document.getElementById("switch");
     if (button.innerHTML === "Dark Theme") {
@@ -19,5 +32,5 @@ function switchTheme() {
 
 document.getElementById("switch").addEventListener("click", switchTheme);
 
-window.onscroll = function(){scrollFunction()};
+// window.onscroll = function(){scrollFunction()};
 

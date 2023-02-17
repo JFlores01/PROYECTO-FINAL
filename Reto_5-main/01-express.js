@@ -40,6 +40,7 @@ app.use('/equipos', require('./router/equipos'))
 
 
 
+
    
    
 app.listen(port, () => {

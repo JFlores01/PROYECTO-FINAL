@@ -7,7 +7,15 @@ const router = express.Router();
 // Importante que ya no usaremos el app.get(...), ahora
 //vamos a utilizar las rutas, por lo que deberemos poner:
 router.get('/', (req, res) => {
+    res.render("login")
+})
+
+router.get('/inicio', (req, res) => {
     res.render("inicio")
+})
+
+router.get('/registro', (req, res) => {
+    res.render("registro")
 })
 
 router.get('/contacto', (req, res) => {

@@ -1,0 +1,48 @@
+<%- include("templates/cabeceralogin.ejs", {tituloWeb:'Login'}) %>
+
+
+
+
+
+
+
+
+
+
+<section class="resultados" id="resultados mt-5">
+    <div class="container py-3 mb-3">
+      <div class="text-center">
+        <p>&nbsp;</p>
+        <br>
+        <h2>LOGIN</h2>
+        <p class="lead">Inicia sesión para acceder</p>
+      </div>
+      
+      <div class="container mt-3">
+        <form class="formulario__login" id="formulario__login">
+          <div class="mb-3 mt-3">
+            <label for="nombre">
+                <p>Nombre:</p>
+            </label>
+            <input type="nombre" class="form-control" id="nombrelogin" placeholder="Introduzca nombre" name="nombrelogin">
+          </div>
+          <div class="mb-3">
+            <label for="pwd"><p>Password:</p></label>
+            <input type="password" class="form-control" id="pswdlogin" placeholder="Introduzca contraseña" name="pswdlogin">
+          </div>
+          <div class="form-check mb-3">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="remember"><p> Remember me</p>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button> <br><br>
+          <a href="/registro">¿Estás registrado?</a>
+        </form>
+      </div>
+
+      
+      
+    </div>
+  </section>
+  <script src="/js/controlLogin.js"></script>
+<%- include("templates/footer") %>
