@@ -14,20 +14,22 @@ function enviarLogin() {
 // });
 
 function InicioSesion (e){
-    preventDefault();
+    event.preventDefault();
 
     var nombre = document.getElementById("nombrelogin").value;
     var contraseña = document.getElementById("pswdlogin").value;
 
 
 
-    var user = localStorage.getItem(nombre, contraseña);
+    var user = localStorage.getItem("user");
     var datos = JSON.parse(user);
+    const nombrelocal = datos.nombre;
+    const contralocal = datos.contraseña;
     
     if(user==null){
         alert("Datos Incorrectos");
 
-    }else if( nombre == datos.nombre && contraseña == datos.contraseña){
+    }else if( nombre == nombrelocal && contraseña == contralocal){
 
         window.location.replace("/inicio");  
     }else{
