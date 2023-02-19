@@ -21,7 +21,6 @@ function checkInputs() {
     var correoValidacion = document.getElementById("email").value;
     var passwordValidacion = document.getElementById("pswd").value;
     var confirmPasswordValidacion = document.getElementById("pswd2").value;
-    var selectValidacion = document.getElementById("dropdownMenuButton2").value;
 
     // Validar el campo nombre
     var letras = /^[a-zA-Z]+$/;
