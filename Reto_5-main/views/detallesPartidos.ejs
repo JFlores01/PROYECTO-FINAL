@@ -1,5 +1,5 @@
 <%- include("templates/cabecera", {tituloWeb: 'Detalles del Partido' }) %>
-    <div class="container">
+    <div class="container py-3 mt-5 ">
         <h1>Detalles del Partido</h1>
         <% if (error) { %>
             <%= mensaje %>
@@ -33,15 +33,19 @@
                                 name="visit_img" id="visit_img_input">
 
 
+                            <div class="d-grid gap-2"> <button class="btn btn-warning btn-sm" type="submit">
+                                    Editar
+                                </button>
+                            </div>
 
-                            <button class="btn btn-warning btn-sm" type="submit">
-                                Editar
-                            </button>
                         </form>
                         <hr>
-                        <button class="btn btn-danger btn-sm" data-id="<%= partidos.id %>">
-                            Eliminar
-                        </button>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-danger btn-sm" data-id="<%= partidos.id %>">
+                                Eliminar
+                            </button>
+                        </div>
+
                         <% } %>
 
 

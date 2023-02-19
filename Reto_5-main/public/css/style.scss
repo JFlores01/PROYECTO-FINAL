@@ -1,4 +1,4 @@
-$primary-claro: #e4dede;
+$primary-claro: #ffffff;
 $secondary-claro: #a1a1a1;
 $aux-claro: #e2e2e2;
 
@@ -14,9 +14,9 @@ $font_aton: 'Anton', sans-serif;
 
 
 
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
 
 //MIXINS
 
@@ -74,7 +74,6 @@ $font_aton: 'Anton', sans-serif;
         font-family: $font_aton;
         background: white;
         transition: .5s ease all;
-
         nav
         {
             background-color: $aux-claro;
@@ -257,4 +256,4 @@ $font_aton: 'Anton', sans-serif;
 
 
 
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
