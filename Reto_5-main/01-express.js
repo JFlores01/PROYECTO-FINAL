@@ -16,32 +16,32 @@ const mongoose = require('mongoose');
 //Lo correcto será declararlas EN VARIABLES DE ENTORNO
 //para que nadie vea directamente nuestras credenciales
 
-const uri = `mongodb+srv://${process.env.db_user}:${process.env.db_password}@cluster0.vfbhkme.mongodb.net/${process.env.db_name}?retryWrites=true&w=majority`;
+
+
+const uri = `mongodb+srv://${process.env.db_user}:${process.env.db_password}@cluster0.westfkq.mongodb.net/${process.env.db_name}?retryWrites=true&w=majority`;
+
+
 
 mongoose.set('strictQuery', false);
 
 mongoose.connect(uri,
-  { useNewUrlParser: true, useUnifiedTopology: true }
+  { useNewUrlParser: true}
 )
   .then(() => console.log('Base de datos conectada'))
   .catch(e => console.log(e))
 
+//Middleware
+app.use(express.static(__dirname+'/public'));
 
 //Motor de plantillas
 app.set('views', __dirname+'/views');
 app.set('view engine', 'ejs');
 
-//Middleware
-app.use(express.static(__dirname+'/public'));
-
 //Llamadas a las rutas
 app.use('/', require('./router/rutas'))
-app.use('/equipos', require('./router/equipos'))
+app.use('/inicio', require('./router/inicio'))
+app.use('/partidos', require('./router/partidos'))
 
-
-
-
-   
    
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

@@ -17,318 +17,43 @@
                 <h2>Partidos</h2>
                 <p class="lead">Fecha y horario de los partidos de la jornada</p>
                 <div class="row">
+                    <!-- Partidos con for -->
 
-                    <!-- PARTIDO 1 -->
+                    <% if (arrayPartidos.length> 0) { %>
+                        <!--Haremos el foreach para recorrer el array-->
+                        <% arrayPartidos.forEach(partidos=> { %>
 
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="card m-2">
-                            <div class="card-body">
-                                <div class="row">
-                                    <h4 class="card-title">Cádiz-Girona</h4>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4 align-self-center">
-                                        <img class="" src="/img/escudos/cadiz.png" alt="Almeria">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="card m-2">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <h4 class="card-title"><%= partidos.local_name %>-<%= partidos.visit_name %></h4>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4 align-self-center">
+                                                <img src="/img/escudos/<%= partidos.local_img %>.png" alt="<%= partidos.local_img %>">
+                                            </div>
+                                            <div class="col-4 align-self-center">
+                                                <h4>|</h4>
+                                            </div>
+                                            <div class="col-4 align-self-center">
+                                                <img src="/img/escudos/<%= partidos.visit_img %>.png" alt="<%= partidos.visit_img %>">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <p class="" id="dia"><%= partidos.match_date %></p>
+                                        </div>
+                                        <div class="row">
+                                            <p class="" id="hora"><%= partidos.match_time %> h</p>
+                                        </div>
+
                                     </div>
-                                    <div class="col-4 align-self-center">
-                                        <h4>|</h4>
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <img src="/img/escudos/girona.png" alt="Betis">
-                                    </div>
                                 </div>
-
-                                <div class="row">
-                                    <p class="" id="dia">10-02-23</p>
-                                </div>
-                                <div class="row">
-                                    <p class="" id="hora">21:00 h</p>
-                                </div>
-
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- PARTIDO 2 -->
-
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="card m-2">
-                            <div class="card-body">
-                                <div class="row">
-                                    <h4 class="card-title">Almería-Betis</h4>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4 align-self-center">
-                                        <img class="" src="/img/escudos/almeria.png" alt="Almeria">
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <h4>|</h4>
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <img src="/img/escudos/betis.png" alt="Betis">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <p class="" id="dia">11-02-23</p>
-                                </div>
-                                <div class="row">
-                                    <p class="" id="hora">16:15 h</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PARTIDO 3 -->
-
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="card m-2">
-                            <div class="card-body">
-                                <div class="row">
-                                    <h4 class="card-title">Sevilla-Mallorca</h4>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4 align-self-center">
-                                        <img class="" src="/img/escudos/sevilla.png" alt="Almeria">
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <h4>|</h4>
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <img src="/img/escudos/mallorca.png" alt="Betis">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <p class="" id="dia">11-02-23</p>
-                                </div>
-                                <div class="row">
-                                    <p class="" id="hora">18:30 h</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PARTIDO 4 -->
-
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="card m-2">
-                            <div class="card-body">
-                                <div class="row">
-                                    <h4 class="card-title">Valencia-Athletic</h4>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4 align-self-center">
-                                        <img class="" src="/img/escudos/valencia.png" alt="Almeria">
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <h4>|</h4>
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <img src="/img/escudos/athletic.png" alt="Betis">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <p class="" id="dia">11-02-23</p>
-                                </div>
-                                <div class="row">
-                                    <p class="" id="hora">20:15 h</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PARTIDO 5 -->
-
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="card m-2">
-                            <div class="card-body">
-                                <div class="row">
-                                    <h4 class="card-title">Getafe-Rayo</h4>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4 align-self-center">
-                                        <img class="" src="/img/escudos/getafe.png" alt="Almeria">
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <h4>|</h4>
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <img src="/img/escudos/rayo.png" alt="Betis">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <p class="" id="dia">12-02-23</p>
-                                </div>
-                                <div class="row">
-                                    <p class="" id="hora">14:00 h</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PARTIDO 6 -->
-
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="card m-2">
-                            <div class="card-body">
-                                <div class="row">
-                                    <h4 class="card-title">Celta-Atlético</h4>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4 align-self-center">
-                                        <img class="" src="/img/escudos/celta.png" alt="Almeria">
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <h4>|</h4>
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <img src="/img/escudos/atletico.png" alt="Betis">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <p class="" id="dia">12-02-23</p>
-                                </div>
-                                <div class="row">
-                                    <p class="" id="hora">16:15 h</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PARTIDO 7 -->
-
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="card m-2">
-                            <div class="card-body">
-                                <div class="row">
-                                    <h4 class="card-title">Valladolid-Osasuna</h4>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4 align-self-center">
-                                        <img class="" src="/img/escudos/valladolid.png" alt="Valladolid">
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <h4>|</h4>
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <img src="/img/escudos/osasuna.png" alt="Osasuna">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <p class="" id="dia">12-02-23</p>
-                                </div>
-                                <div class="row">
-                                    <p class="" id="hora">18:30 h</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PARTIDO 8 -->
-
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="card m-2">
-                            <div class="card-body">
-                                <div class="row">
-                                    <h4 class="card-title">Villarreal-Barcelona</h4>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4 align-self-center">
-                                        <img class="" src="/img/escudos/villarreal.png" alt="Villarreal">
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <h4>|</h4>
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <img src="/img/escudos/barca.png" alt="Barcelona">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <p class="" id="dia">12-02-23</p>
-                                </div>
-                                <div class="row">
-                                    <p class="" id="hora">21:00 h</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PARTIDO 9 -->
-
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="card m-2">
-                            <div class="card-body">
-                                <div class="row">
-                                    <h4 class="card-title">Espanyol-Real Sociedad</h4>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4 align-self-center">
-                                        <img class="" src="/img/escudos/espanyol.png" alt="Espanyol">
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <h4>|</h4>
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <img src="/img/escudos/real.png" alt="Real Sociedad">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <p class="" id="dia">13-02-23</p>
-                                </div>
-                                <div class="row">
-                                    <p class="" id="hora">21:00 h</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PARTIDO 10 -->
-
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="card m-2">
-                            <div class="card-body">
-                                <div class="row">
-                                    <h4 class="card-title">Real Madrid-Elche</h4>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4 align-self-center">
-                                        <img class="" src="/img/escudos/madrid.png" alt="Real Madrid">
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <h4>|</h4>
-                                    </div>
-                                    <div class="col-4 align-self-center">
-                                        <img src="/img/escudos/elche.png" alt="Elche">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <p class="" id="dia">13-02-23</p>
-                                </div>
-                                <div class="row">
-                                    <p class="" id="hora">21:00 h</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-
+                            <% }) %>
+                                <% } %>
+                                    <!-- final partido con for -->
                 </div>
             </div>
         </section>
@@ -346,69 +71,24 @@
                     <th>Local</th>
                     <th>Visitante</th>
                     <th>Resultado</th>
-                    <th>Quiniela (1 X 2)</th>
-                </tr>
-                <tr>
-                    <td><img src="/img/escudos/cadiz.png" alt="Cádiz"></td>
-                    <td><img src="/img/escudos/girona.png" alt="Girona"></td>
-                    <td>2-0</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td><img src="/img/escudos/almeria.png" alt="Almeria"></td>
-                    <td><img src="/img/escudos/betis.png" alt="Betis"></td>
-                    <td>2-3</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td><img src="/img/escudos/sevilla.png" alt="Sevilla"></td>
-                    <td><img src="/img/escudos/mallorca.png" alt="Mallorca"></td>
-                    <td>2-0</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td><img src="/img/escudos/valencia.png" alt="Valencia"></td>
-                    <td><img src="/img/escudos/athletic.png" alt="Athletic de Bilbao"></td>
-                    <td>1-2</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td><img src="/img/escudos/getafe.png" alt="Getafe"></td>
-                    <td><img src="/img/escudos/rayo.png" alt="Rayo Vallecano"></td>
-                    <td>Por disputar</td>
-                    <td>Por disputar</td>
-                </tr>
-                <tr>
-                    <td><img src="/img/escudos/celta.png" alt="Celta"></td>
-                    <td><img src="/img/escudos/atletico.png" alt="Atlético de Madrid"></td>
-                    <td>Por disputar</td>
-                    <td>Por disputar</td>
-                </tr>
-                <tr>
-                    <td><img src="/img/escudos/valladolid.png" alt="Valladolid"></td>
-                    <td><img src="/img/escudos/osasuna.png" alt="Osasuna"></td>
-                    <td>Por disputar</td>
-                    <td>Por disputar</td>
-                </tr>
-                <tr>
-                    <td><img src="/img/escudos/villarreal.png" alt="Villarreal"></td>
-                    <td><img src="/img/escudos/barca.png" alt="Barcelona"></td>
-                    <td>Por disputar</td>
-                    <td>Por disputar</td>
-                </tr>
-                <tr>
-                    <td><img src="/img/escudos/espanyol.png" alt="Espanyol"></td>
-                    <td><img src="/img/escudos/real.png" alt="Real Sociedad"></td>
-                    <td>Por disputar</td>
-                    <td>Por disputar</td>
-                </tr>
-                <tr>
-                    <td><img src="/img/escudos/madrid.png" alt="Real Madrid"></td>
-                    <td><img src="/img/escudos/elche.png" alt="Elche"></td>
-                    <td>Por disputar</td>
-                    <td>Por disputar</td>
+                    <th>Estadio</th>
                 </tr>
 
+<!-- Inicio Bucle -->
+
+<% if (arrayPartidos.length> 0) { %>
+    <!--Haremos el foreach para recorrer el array-->
+    <% arrayPartidos.forEach(partidos => { %>
+
+        <tr>
+            <td> <img src="/img/escudos/<%= partidos.local_img %>.png" alt="<%= partidos.local_img %>"></td>
+            <td> <img src="/img/escudos/<%= partidos.visit_img %>.png" alt="<%= partidos.visit_img %>"></td>
+            <td><%= partidos.local_goals %>-<%= partidos.visit_goals %></td>
+            <td><%= partidos.stadium_name %></td>
+        </tr>
+        <% }) %>
+        <% } %>
+<!-- Fin Bucle -->
             </table>
         </div>
     </section>

@@ -1,16 +1,4 @@
-
-const nombreUsuario = JSON.parse(localStorage.getItem("user"));
-
-
-
-const nombreH1 = document.getElementById('bienvenido');
-
-
-nombreH1.textContent = `Bienvenido, ${nombreUsuario.nombre}!`;
-
-
-
-
+//Personalizar tema claro / oscuro
 
 function switchTheme() {
     var button = document.getElementById("switch");
@@ -32,5 +20,15 @@ function switchTheme() {
 
 document.getElementById("switch").addEventListener("click", switchTheme);
 
-// window.onscroll = function(){scrollFunction()};
+
+// Personalizar nombre de usuario en Bienvenida
+
+
+const nombreUsuario = JSON.parse(localStorage.getItem("user"));
+
+const nombreH1 = document.getElementById('bienvenido');
+
+nombreH1.textContent = `¡Bienvenido ${nombreUsuario.nombre}!`;
+
+
 

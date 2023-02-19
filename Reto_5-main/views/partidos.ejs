@@ -1,0 +1,153 @@
+<%- include("templates/cabecera.ejs", {tituloWeb:'Panel de Administración'}) %>
+
+    <div class="container-fluid">
+        <h1>CRUD Mongo</h1>
+        <a class="btn btn-success btn-block my-4" href="partidos/crearPartido">Crear un nuevo partido</a>
+        <div class="d-none d-sm-block">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Local</th>
+                        <th scope="col">Visitante</th>
+                        <th scope="col">Estadio</th>
+                        <th scope="col">Capacidad</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Goles Local</th>
+                        <th scope="col">Goles Visitante</th>
+                        <th scope="col">Escudo Local</th>
+                        <th scope="col">Escudo Visitante</th>
+                        <th scope="col">Acción</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (arrayPartidos.length> 0) { %>
+                        <!--Haremos el foreach para recorrer el array-->
+                        <% arrayPartidos.forEach(partidos=> { %>
+                            <tr>
+                                <td>
+                                    <%= partidos.local_name %>
+                                </td>
+                                <td>
+                                    <%= partidos.visit_name %>
+                                </td>
+                                <td>
+                                    <%= partidos.stadium_name %>
+                                </td>
+                                <td>
+                                    <%= partidos.stadium_capacity %>
+                                </td>
+                                <td>
+                                    <%= partidos.match_date %>
+                                </td>
+                                <td>
+                                    <%= partidos.match_time %>
+                                </td>
+                                <td>
+                                    <%= partidos.local_goals %>
+                                </td>
+                                <td>
+                                    <%= partidos.visit_goals %>
+                                </td>
+                                <td>
+                                    <!-- Escudos Imagen -->
+                                    <img src="img/escudos/<%= partidos.local_img %>.png"
+                                        alt="<%= partidos.local_img %>">
+
+                                </td>
+                                <td>
+                                    <!-- Escudos Imagen -->
+                                    <img src="img/escudos/<%= partidos.visit_img %>.png"
+                                        alt="<%= partidos.visit_img %>">
+
+                                </td>
+
+                                <td>
+                                    <a class="btn btn-warning btn-sm"
+                                        href="/partidos/<%= partidos.id %>">Editar/Eliminar</a>
+                                </td>
+                            </tr>
+                            <% }) %>
+                                <% } %>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="d-none d-sm-block d-md-none">
+
+            <!--Haremos el foreach para recorrer el array-->
+            <% console.log(arrayPartidos)%>
+            <% if (arrayPartidos.length> 0) { %>
+                <!--Haremos el foreach para recorrer el array-->
+                <% arrayPartidos.forEach(partidos=> { %>
+                    <div class="col-12">
+                        <div class="card m-2">
+                            <div class="card-body">
+                                <div class="row">
+                                    <h4 class="card-title">
+                                        <%=partidos.local_name %>-<%=partidos.visit_name %>
+                                    </h4>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 align-self-center">
+                                        <img src="/img/escudos/<%=partidos.local_img %>.png"
+                                            alt="<%=partidos.local_img %>">
+                                    </div>
+                                    <div class="col-4 align-self-center">
+                                        <h4>|</h4>
+                                    </div>
+                                    <div class="col-4 align-self-center">
+                                        <img src="/img/escudos/<%=partidos.visit_img %>.png"
+                                            alt="<%=partidos.visit_img %>">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-5">
+                                        <p class="" id="dia">
+                                            <%= partidos.match_date %>
+                                        </p>
+                                    </div>
+                                    <div class="col-2">
+                                        <p class="" id="separator">
+                                            |
+                                        </p>
+                                    </div>
+                                    <div class="col-5">
+                                        <p class="" id="hora">
+                                            <%= partidos.match_time %> h
+                                        </p>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-5">
+                                        <p class="" id="estadio">
+                                            <%= partidos.stadium_name %>
+                                        </p>
+                                    </div>
+                                    <div class="col-2">
+                                        <p class="" id="separator">
+                                            -
+                                        </p>
+                                    </div>
+                                    <div class="col-5">
+                                        <p class="" id="capacidad">
+                                            <%= partidos.stadium_capacity %> p
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+                        <% } %>
+                            <!-- final partido con for -->
+        </div>
+
+    </div>
+
+
+    <%- include("templates/footer.ejs") %>

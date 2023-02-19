@@ -10,17 +10,16 @@ router.get('/', (req, res) => {
     res.render("login")
 })
 
-router.get('/inicio', (req, res) => {
-    res.render("inicio")
-})
+// router.get('/inicio', async(req, res) => {
+//     res.render("inicio")
+    
+// })
 
 router.get('/registro', (req, res) => {
     res.render("registro")
 })
 
-router.get('/contacto', (req, res) => {
-    res.render("contacto", { tituloContacto: "Estamos en contacto de manera dinámica!!" })
-})
+
 
 
 // Por último, vamos a exportarlo:
